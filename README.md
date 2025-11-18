@@ -17,6 +17,8 @@ cp prompts/context-handoff/*.md ~/.claude/commands/
 # Install skills
 cp skills/create-agent-skills/commands/*.md ~/.claude/commands/
 cp -r skills/create-agent-skills/skills/* ~/.claude/skills/
+cp skills/create-meta-prompts/commands/*.md ~/.claude/commands/
+cp -r skills/create-meta-prompts/skills/* ~/.claude/skills/
 ```
 
 Commands install globally to `~/.claude/commands/`. Skills install to `~/.claude/skills/`. Project-specific data (prompts, todos) lives in each project's working directory.
@@ -48,6 +50,12 @@ Perfect for when your context is getting full, you need a clean slate, or you're
 Build skills by describing what you want. `/create-agent-skill` asks clarifying questions, researches APIs if needed, and generates properly structured skill files. When things don't work perfectly, `/heal-skill` analyzes what went wrong and updates the skill based on what actually worked.
 
 Perfect for packaging repeatable workflows—PDF processing, API integrations, chart generation—into skills that Claude can execute consistently. Let your mind go wild!
+
+### [Create Meta-Prompts](./skills/create-meta-prompts/)
+
+The skill-based evolution of the meta-prompting system above. `/create-meta-prompt` builds prompts with structured outputs (research.md, plan.md) that subsequent prompts can parse. Adds automatic dependency detection to chain research → plan → implement workflows.
+
+Perfect for complex tasks that benefit from staged workflows where each stage produces artifacts for the next.
 
 ---
 
